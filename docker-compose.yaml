@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  tarantool:
+    container_name: tarantool-dev
+    image: tarantool/tarantool:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app
+    command: tarantool /app/server.lua
